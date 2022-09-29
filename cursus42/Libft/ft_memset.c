@@ -6,11 +6,11 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:43:19 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/21 12:58:08 by maromero         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:48:16 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include"libft.h"
 #include<string.h>
 
 void	*ft_memset(void *b, int c, size_t len)
@@ -27,11 +27,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
+/*
 int	main(void)
 {
 	char	str[] = "this is string";
 	
 	printf("%s\n", ft_memset(str, 32, 10));
 	printf("%s\n", memset(str, 32, 20));
-}
+}*/

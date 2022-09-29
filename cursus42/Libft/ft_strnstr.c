@@ -6,14 +6,12 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:46:09 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/28 20:07:08 by maromero         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:18:03 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-size_t	ft_strlen(const char *s);
+#include"libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

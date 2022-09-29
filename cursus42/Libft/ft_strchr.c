@@ -6,11 +6,11 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:43:42 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/22 21:10:31 by maromero         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:48:23 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include"libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -22,11 +22,11 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char	*str;
 
 	str = "hola que tal estas";
 	printf("%s", ft_strchr(str, 'x'));
-}
+}*/

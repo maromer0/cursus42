@@ -6,11 +6,11 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 14:08:19 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/22 18:13:46 by maromero         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:48:30 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s);
+#include"libft.h"
 
 size_t	ft_strlcat(char *dest, char *src, unsigned int size)
 {

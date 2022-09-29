@@ -6,11 +6,11 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:59:06 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/23 12:19:37 by maromero         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:23:57 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include"libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -26,7 +26,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (s1[c] - s2[c]);
 }
-
+/*
 int	main(void)
 {
 	int		ret;
@@ -50,4 +50,4 @@ int	main(void)
 		printf("str1 igual str2");
 	}
 	return (0);
-}
+}*/
