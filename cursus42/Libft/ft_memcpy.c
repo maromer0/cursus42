@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:58:53 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/29 20:05:56 by maromero         ###   ########.fr       */
+/*   Updated: 2022/10/04 17:51:05 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	d = dst;
 	s = src;
+	if (!d && !s)
+		return (0);
 	while (n-- > 0)
 	{
 		*d++ = *s++;
@@ -29,7 +31,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 int	main(void)
 {
 	char	dst[] = "hola";
-	char	src[] = "ey que tal estas";
+	char	src[] = "hey que tal estas";
 
 	printf("%s\n", ft_memcpy(dst, src, 17));
 	return (0);

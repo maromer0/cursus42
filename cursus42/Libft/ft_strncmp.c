@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:59:06 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/29 18:23:57 by maromero         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:04:52 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	main(void)
 {
 	int		ret;
 	int t;
-	char s1[] = "holb";
-	char s2[] = "hozc";
+	char s1[] = "abcdef";
+	char s2[] = "abc\xfdxx";
 
 	t = ft_strncmp(s1, s2, 7);
 	printf("%d\n", t);

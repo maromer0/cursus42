@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:46:09 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/29 18:18:03 by maromero         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:04:59 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char s1[] = "hola que tal estas";
@@ -36,4 +36,4 @@ int	main(void)
 
 	printf("%s\n", ft_strnstr(s1, s2, 10));
 	return (0);
-}
+}*/

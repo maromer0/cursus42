@@ -6,26 +6,21 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 21:12:44 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/29 17:48:56 by maromero         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:30:01 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
 #include"libft.h"
-
-size_t	ft_strlen(const char *s);
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	int	len;
 
-	len = ft_strlen(s);
-	printf("%zu\n", len);
-	while (len >= 0)
+	len = ft_strlen((char *)s) + 1;
+	while (len--)
 	{
 		if (*(s + len) == c)
 			return ((char *)(s + len));
-		len--;
 	}
 	return (0);
 }
@@ -34,7 +29,7 @@ int	main(void)
 {
 	char	*str;
 
-	str = "xola que tal estas";
-	printf("%s\n", ft_strrchr(str, ' '));
-	printf("%s", strrchr(str, ' '));
+	str = "bonjour";
+	printf("%s\n", ft_strrchr(str, 'b'));
+	printf("%s", strrchr(str, 'b'));
 }*/

@@ -6,13 +6,19 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:39:43 by maromero          #+#    #+#             */
-/*   Updated: 2022/09/20 19:33:18 by maromero         ###   ########.fr       */
+/*   Updated: 2022/10/04 18:08:31 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
 	if (c >= '0' && c <= '9')
+		return (1);
+	else if (c >= 'a' && c <= 'z')
+		return (1);
+	else if (c >= 'A' && c <= 'Z')
 		return (1);
 	else
 		return (0);
