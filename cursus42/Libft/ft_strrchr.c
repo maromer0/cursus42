@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 21:12:44 by maromero          #+#    #+#             */
-/*   Updated: 2022/10/06 18:30:01 by maromero         ###   ########.fr       */
+/*   Updated: 2022/10/26 12:35:35 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen((char *)s) + 1;
 	while (len--)
 	{
-		if (*(s + len) == c)
+		if (*(s + len) == (char)c)
 			return ((char *)(s + len));
 	}
 	return (0);

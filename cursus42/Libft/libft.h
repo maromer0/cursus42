@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:08:51 by maromero          #+#    #+#             */
-/*   Updated: 2022/10/06 19:04:53 by maromero         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:16:11 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include<unistd.h>
 # include<stdio.h>
 
+int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isprint(int c);
 int		ft_isdigit(int c);
