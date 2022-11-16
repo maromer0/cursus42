@@ -3,47 +3,77 @@ dimensional terminado en un puntero NULL */
 
 #include"libft.h"
 
-char **ft_split(char const *s, char c)
+/* cuenta cuantas substrings necesitamos */
+static	size_t	ft_count(char const *s, char c)
 {
-	char	**split;
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t count;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	split = (ft_calloc(sizeof(char *), ft_strlen(s) + 1));
-	while (s[k] != '\0')
+	count = 0;
+	while (*s != '\0')
 	{
-		split[j][i] = s[k];
-		i++;
-		if (c == s[k])
+		if (*s == c)
+			s++;
+		else
 		{
-			split[j][i] = '\0';
-			j++;
-			i = 0;
+			count++;
+			while (*s != '\0' && *s != c)
+				s++;
 		}
-		k++;
 	}
-	return(split);
+	return (count);
 }
 
+static	char	**ft_free(char **s, size_t	i)
+{
+	while (s[i] != NULL)
+	{
+		free(s[i]);
+		s[i] = NULL;
+		i--;
+	}
+	free(s);
+	s = NULL;
+	return (NULL);
+}
 
-int main (void)
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	len;
+	size_t	count;
+	char	**str;
+
+	count = ft_count(s, c);
+	if (!s || !(str = (char **)malloc(sizeof(char *) * (count + 1))))
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		if (*s == c)
+			s++;
+		else
+		{
+			len = 0;
+			while(*(s + len) && *(s + len) != c)
+				len++;
+			if (i < count && !(str[i++] = ft_substr(s, 0, len)))
+				return (ft_free(str, i));
+			s = s + len;
+		}
+	}
+	str[i] = 0;
+	return (str);
+}
+
+/* int main (void)
 {
 	char	**split;
-	size_t	i;
-	size_t	j;
 
-	split = ft_split("hola 1ue tal", '1');
-	i = 0;
-	j = 0;
-	while (split[j][i] != '\0')
-	{
-		printf("%c", split[j][i]);
-		i++;
-		j++;
-	}
+	split = ft_split("hola 1ue tal, com1 est1as?", '1');
+	printf("%s\n", split[0]);
+	printf("%s\n", split[1]);
+	printf("%s\n", split[2]);
+	printf("%s\n", split[3]);
+	printf("%s\n", split[4]);
 	return (0);
-}
+} */
