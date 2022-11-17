@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:08:51 by maromero          #+#    #+#             */
-/*   Updated: 2022/10/26 13:16:11 by maromero         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:52:31 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@
 # include<unistd.h>
 # include<stdio.h>
 
-
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
 
 int		ft_atoi(const char *str);
 void	*ft_bzero(void *s, size_t n);
@@ -34,7 +32,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 char	*ft_itoa(int n);
-void    *ft_memchr(const void *str, int c, size_t n);
+void	*ft_memchr(const void *str, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);

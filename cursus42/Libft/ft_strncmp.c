@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:59:06 by maromero          #+#    #+#             */
-/*   Updated: 2022/10/26 12:46:13 by maromero         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:50:51 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
+
+/*int	main(void)
 {
 	int		ret;
 	int t;
