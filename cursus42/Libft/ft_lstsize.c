@@ -1,4 +1,4 @@
-/* devuelve la cantidad de nodos de una lista */
+/*devuelve la cantidad de nodos de una lista */
 
 #include"libft.h"
 
