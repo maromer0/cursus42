@@ -1,9 +1,22 @@
-/*compara los n primeros bytes de dos punteros y devuelve un valor entero, si es positivo
-str1 es mayor, si es negativo str2 es mayor y si es 0 son iguales*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/17 17:46:12 by maromero          #+#    #+#             */
+/*   Updated: 2022/11/17 18:31:20 by maromero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*compara los n primeros bytes de dos punteros
+y devuelve un valor entero, si es positivo str1
+es mayor, si es negativo str2 es mayor y si es 0 son iguales*/
 
 #include "libft.h"
 
-int ft_memcmp(const void *str1, const void *str2, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	unsigned char	s1;
 	unsigned char	s2;
@@ -14,13 +27,11 @@ int ft_memcmp(const void *str1, const void *str2, size_t n)
 		s2 = *(unsigned char *)str2++;
 		if (s1 != s2)
 			return (s1 - s2);
-		if (s1 == '\0')
-			return (0);
 	}
 	return (0);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int		ret;
 	int t;
@@ -43,4 +54,4 @@ int	main(void)
 		printf("str1 igual str2");
 	}
 	return (0);
-}
+}*/

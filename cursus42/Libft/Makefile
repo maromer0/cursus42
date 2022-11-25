@@ -6,7 +6,7 @@
 #    By: maromero <maromero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 15:30:29 by maromero          #+#    #+#              #
-#    Updated: 2022/10/04 18:02:16 by maromero         ###   ########.fr        #
+#    Updated: 2022/11/17 18:26:12 by maromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ MY_SOURCES = ft_atoi.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			mainalnum.c\
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 

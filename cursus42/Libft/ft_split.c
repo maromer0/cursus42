@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/17 17:48:36 by maromero          #+#    #+#             */
+/*   Updated: 2022/11/17 17:48:54 by maromero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* separa una string en 2 substrings en un array
 dimensional terminado en un puntero NULL */
 
@@ -6,7 +18,7 @@ dimensional terminado en un puntero NULL */
 /* cuenta cuantas substrings necesitamos */
 static	size_t	ft_count(char const *s, char c)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (*s != '\0')
@@ -54,7 +66,7 @@ char	**ft_split(char const *s, char c)
 		else
 		{
 			len = 0;
-			while(*(s + len) && *(s + len) != c)
+			while (*(s + len) && *(s + len) != c)
 				len++;
 			if (i < count && !(str[i++] = ft_substr(s, 0, len)))
 				return (ft_free(str, i));

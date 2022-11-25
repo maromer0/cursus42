@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/17 17:37:03 by maromero          #+#    #+#             */
+/*   Updated: 2022/11/17 17:38:33 by maromero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* transforma un numero entero a una string */
 
 #include"libft.h"
@@ -9,7 +21,7 @@ static size_t	ft_count(int n)
 	count = 0;
 	while (n)
 	{
-		n = n/10;
+		n = n / 10;
 		count++;
 	}
 	return (count);
@@ -41,7 +53,7 @@ char	*ft_itoa(int n)
 		if (!(result = (char *)malloc(sizeof(char) * (len + 1))))
 			return (0);
 		ft_write((result + len - 1), n < 0 ? -num : num);
-		if(n < 0)
+		if (n < 0)
 			*result = '-';
 		result[len] = '\0';
 	}
