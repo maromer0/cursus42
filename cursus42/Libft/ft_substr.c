@@ -9,7 +9,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
-	substr = ft_calloc(sizeof(char), (len + 1));
+	if (!(substr = (void *)malloc(result)))
+        return (0);
 	ft_memcpy(substr, s + start, len);
 	substr[len] = '\0';
 	return (substr);
