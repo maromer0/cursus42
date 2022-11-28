@@ -49,10 +49,18 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	else
 	{
-		len = n < 0 ? ft_count(n) + 1 : ft_count(n);
+		if (n < 0)
+			len = ft_count(n) + 1;
+		else
+			len = ft_count(n);
+		/* len = n < 0 ? ft_count(n) + 1 : ft_count(n); */
 		if (!(result = (char *)malloc(sizeof(char) * (len + 1))))
 			return (0);
-		ft_write((result + len - 1), n < 0 ? -num : num);
+		/* ft_write((result + len - 1), n < 0 ? -num : num); */
+		if (n < 0)
+			ft_write((result + len - 1), -num);
+		else
+			ft_write((result + len - 1), num);
 		if (n < 0)
 			*result = '-';
 		result[len] = '\0';
