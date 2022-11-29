@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:49:34 by maromero          #+#    #+#             */
-/*   Updated: 2022/11/17 17:50:10 by maromero         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:53:38 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	suma = ft_strlen(s1) + ft_strlen(s2);
 	result = ft_calloc(sizeof(char), (suma + 1));
+	if (!result)
+		return (0);
 	while (s1[i])
 	{
 		result[i] = s1[i];

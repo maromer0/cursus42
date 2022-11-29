@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:51:03 by maromero          #+#    #+#             */
-/*   Updated: 2022/11/17 17:51:12 by maromero         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:01:38 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ de set hasta encontrar un valor que no este en set */
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
+	size_t	size;
 
 	if (!s1 || !set)
 		return (NULL);
 	while (ft_strchr(set, *s1) && *s1 != '\0')
 		s1++;
-	len = ft_strlen((char *)s1);
-	while (ft_strchr(set, s1[len]) && len != 0)
-		len--;
-	return (ft_substr((char *)s1, 0, (len + 1)));
+	size = ft_strlen((char *)s1);
+	while (ft_strchr(set, s1[size]) && size != 0)
+		size--;
+	return (ft_substr((char *)s1, 0, size + 1));
 }

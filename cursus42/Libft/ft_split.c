@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:48:36 by maromero          #+#    #+#             */
-/*   Updated: 2022/11/17 17:48:54 by maromero         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:30:38 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,66 +15,75 @@ dimensional terminado en un puntero NULL */
 
 #include"libft.h"
 
-/* cuenta cuantas substrings necesitamos */
-static	size_t	ft_count(char const *s, char c)
+static	int	count_c(char const *s, char c)
 {
-	size_t	count;
+	int	count;
+	int	i;
 
 	count = 0;
-	while (*s != '\0')
+	i = 0;
+	if (!s)
+		return (0);
+	if (s[i] == c)
+		count--;
+	while (s[i] != '\0')
 	{
-		if (*s == c)
-			s++;
-		else
-		{
+		if ((s[i] == c) && (s[i + 1] != c) && (s[i + 1] != '\0'))
 			count++;
-			while (*s != '\0' && *s != c)
-				s++;
-		}
+		i++;
 	}
+	count++;
 	return (count);
 }
 
-static	char	**ft_free(char **s, size_t	i)
+static	char	*count_str(char const *s, char c)
 {
-	while (s[i] != NULL)
+	char	*str;
+	int		i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	str = (char *)malloc (sizeof(char) * (i + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i] && s[i] != c)
 	{
-		free(s[i]);
-		s[i] = NULL;
-		i--;
+		str[i] = s[i];
+		i++;
 	}
-	free(s);
-	s = NULL;
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	len;
-	size_t	count;
-	char	**str;
+	char	**result;
+	int		split;
+	int		i;
 
-	count = ft_count(s, c);
-	if (!s || !(str = (char **)malloc(sizeof(char *) * (count + 1))))
+	if (!s)
 		return (NULL);
 	i = 0;
+	split = count_c(s, c);
+	result = (char **)malloc(sizeof(char *) * (split + 1));
+	if (!result)
+		return (NULL);
 	while (*s)
 	{
-		if (*s == c)
+		while (*s && *s == c)
 			s++;
-		else
+		if (*s && *s != c)
 		{
-			len = 0;
-			while (*(s + len) && *(s + len) != c)
-				len++;
-			if (i < count && !(str[i++] = ft_substr(s, 0, len)))
-				return (ft_free(str, i));
-			s = s + len;
+			result[i] = count_str(s, c);
+			i++;
+			while (*s && *s != c)
+				s++;
 		}
 	}
-	str[i] = 0;
-	return (str);
+	result[i] = NULL;
+	return (result);
 }
 
 /* int main (void)

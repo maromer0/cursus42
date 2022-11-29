@@ -6,11 +6,18 @@
 #    By: maromero <maromero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 15:30:29 by maromero          #+#    #+#              #
-#    Updated: 2022/11/17 18:26:12 by maromero         ###   ########.fr        #
+#    Updated: 2022/11/29 16:05:43 by maromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+CFLAGS = -Wall -Werror -Wextra
+CC		= gcc
+AR		= ar crs
+RM		= rm -f
+
+OBJS = $(MY_SOURCES:.c=.o)
 
 MY_SOURCES = ft_atoi.c\
 			ft_bzero.c\
@@ -46,27 +53,33 @@ MY_SOURCES = ft_atoi.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			ft_lstnew.c\
-			ft_lstadd_front.c\
-			ft_lstsize.c\
-			ft_lstlast.c\
-			ft_lstadd_back\
-			ft_lstdelone.c\
-			ft_lstclear.c\
-			ft_lstiter.c\
-			ft_lstmap.c\
 
-MY_OBJECTS = $(MY_SOURCES:.c=.o)
+OBJS_B = $(MY_SOURCES_B:.c=.o)
 
-$(NAME):
-		gcc $(CCFLAGS) -c $(MY_SOURCES) -I ./
-		ar rc $(NAME) $(MY_OBJECTS)
+MY_SOURCES_B = ft_lstnew.c\
+			   ft_lstadd_front.c\
+			   ft_lstsize.c\
+			   ft_lstlast.c\
+			   ft_lstadd_back.c\
+			   ft_lstdelone.c\
+			   ft_lstclear.c\
+			   ft_lstiter.c\
+			   ft_lstmap.c\
+
 all : $(NAME)
 
-CCFLAGS += -Wall -Werror -Wextra
-clean:
-		rm -f $(MY_OBJECTS)
-fclean: clean
-		rm -f $(NAME)
+${NAME}:	${OBJS} ${OBJS_B}
+			${AR} ${NAME} ${OBJS}
 
-re : fclean all
+bonus:		${OBJS} ${OBJS_B}
+			${AR} ${NAME} ${OBJS} ${OBJS_B}
+
+clean:
+		${RM} $(OBJS) $(OBJS_B)
+
+fclean: clean
+		${RM} $(NAME)
+
+re: fclean all
+
+.PHONY:		all clean fclean re bonus

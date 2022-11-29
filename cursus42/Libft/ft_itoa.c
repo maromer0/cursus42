@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:37:03 by maromero          #+#    #+#             */
-/*   Updated: 2022/11/17 17:38:33 by maromero         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:05:01 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,9 @@ char	*ft_itoa(int n)
 			len = ft_count(n) + 1;
 		else
 			len = ft_count(n);
-		/* len = n < 0 ? ft_count(n) + 1 : ft_count(n); */
-		if (!(result = (char *)malloc(sizeof(char) * (len + 1))))
+		result = (char *)malloc(sizeof(char) * (len + 1));
+		if (!result)
 			return (0);
-		/* ft_write((result + len - 1), n < 0 ? -num : num); */
 		if (n < 0)
 			ft_write((result + len - 1), -num);
 		else

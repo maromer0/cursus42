@@ -6,7 +6,7 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:52:10 by maromero          #+#    #+#             */
-/*   Updated: 2022/11/17 19:52:36 by maromero         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:24:57 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,28 @@ principal desde start con longitud len */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substr;
+	char	*str;
+	size_t	len_str;
 
-	if (ft_strlen((char *)s) < start)
+	if (s == NULL)
+		return (NULL);
+	len_str = ft_strlen(s);
+	if (len > len_str)
+		len = len_str;
+	if (start > len_str)
 		return (ft_strdup(""));
-	if (!(substr = (void *)malloc(result)))
-        return (0);
-	ft_memcpy(substr, s + start, len);
-	substr[len] = '\0';
-	return (substr);
+	if (len_str - start >= len)
+		str = (char *)malloc((len + 1) * sizeof(char));
+	else
+		str = (char *)malloc((len_str - start + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	ft_strlcpy(str, (s + start), (len + 1));
+	return (str);
 }
 
-/*int main(void)
+/*int	main(void)
 {
-	printf("%s\n", ft_substr("hola que tal, mi nombre es manuel", 14, 18446744073709551615));
+	printf("%s\n", ft_substr("hola", 2, 3));
 	return (0);
 }*/
