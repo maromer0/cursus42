@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static void	ft_print_mem(unsigned long int n, size_t *i)
+static void	ft_print_memhex(unsigned long int n, size_t *i)
 {
 	char	str[25];
 	char	*hex;
@@ -10,7 +10,7 @@ static void	ft_print_mem(unsigned long int n, size_t *i)
 	j = 0;
 	if (n == 0)
 	{
-		ft_printchar('0', i);
+		ft_print_char('0', i);
 		return ;
 	}
 	while (n != 0)
@@ -20,12 +20,12 @@ static void	ft_print_mem(unsigned long int n, size_t *i)
 		j++;
 	}
 	while (j--)
-		ft_printchar(str[j], i);
+		ft_print_char(str[j], i);
 }
 
-void	ft_printmemptr(unsigned long int n, size_t *i)
+void	ft_print_mem(unsigned long int n, size_t *i)
 {
 	ft_print_char('0', i);
 	ft_print_char('x', i);
-	ft_print_mem(n, i);
+	ft_print_memhex(n, i);
 }

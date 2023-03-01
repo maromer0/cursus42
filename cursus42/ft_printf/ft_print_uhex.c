@@ -10,7 +10,7 @@ void	ft_print_uhex(unsigned int n, size_t *i)
 		j = 0;
 	if (n == 0)
 	{
-		ft_printchar('0', i);
+		ft_print_char('0', i);
 		return ;
 	}
 	while (n != 0)
@@ -20,5 +20,5 @@ void	ft_print_uhex(unsigned int n, size_t *i)
 		j++;
 	}
 	while (j--)
-		ft_printchar(str[j], i);
+		ft_print_char(str[j], i);
 }

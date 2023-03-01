@@ -20,19 +20,26 @@ RM		= rm -rf
 OBJS = $(MY_SOURCES:.c=.o)
 
 MY_SOURCES = ft_printf.c\
+			ft_print_char.c\
+			ft_print_hex.c\
+			ft_print_mem.c\
+			ft_print_num.c\
+			ft_print_str.c\
+			ft_print_uhex.c\
+			ft_print_unsig.c\
 			
 
 
 all : $(NAME)
 
-${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
+$(NAME):	$(OBJS)
+			$(AR) $(NAME) $(OBJS)
 
 clean:
-		${RM} $(OBJS)
+		$(RM) $(OBJS)
 
 fclean: clean
-		${RM} $(NAME)
+		$(RM) $(NAME)
 
 re: fclean all
 
