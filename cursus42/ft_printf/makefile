@@ -6,11 +6,11 @@
 #    By: maromero <maromero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/12 20:06:33 by maromero          #+#    #+#              #
-#    Updated: 2023/02/12 20:11:48 by maromero         ###   ########.fr        #
+#    Updated: 2023/03/02 11:36:02 by maromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libftprintf.a
 
 CFLAGS = -Wall -Werror -Wextra
 CC		= gcc
