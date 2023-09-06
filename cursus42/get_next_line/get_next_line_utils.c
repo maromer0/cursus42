@@ -6,12 +6,13 @@
 /*   By: maromero <maromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 20:03:22 by maromero          #+#    #+#             */
-/*   Updated: 2023/08/25 20:05:52 by maromero         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:03:20 by maromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+//concatena s1 + s2
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
@@ -38,7 +39,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	free (s1);
 	return (str);
 }
-
+ //mide la longitud de s
 size_t	ft_strlen(char *s)
 {
 	size_t	i;
@@ -53,6 +54,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
+//devuelve la cadena de caracteres desde c si encuentra c en la cadena
 char	*ft_strchr(char *s, int c)
 {
 	unsigned char	c_unsigned;
