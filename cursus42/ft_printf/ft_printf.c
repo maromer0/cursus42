@@ -58,3 +58,19 @@ int	ft_printf(char const *str, ...)
 	va_end(arg);
 	return (i);
 }
+
+int	main()
+{
+	char c;
+	char a[50] = "hola";
+	int n;
+	int i;
+
+	n = 1234645646;
+	c = '0';
+	ft_printf("hola");
+	printf("");
+	i = ft_printf("%u\n", n);
+	printf("%d\n", 123456);
+	ft_printf("%d", i);
+}
