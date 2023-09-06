@@ -1,3 +1,3 @@
-hola que tal
-estas amigo
-mio?.
+hola que tal estas? actualmente estoy elaborando el proyecto get_next_line.
+este proyecto se simplifica a leer este archivo de texto, a modo de prueba, y mostrar por pantalla cada una de las líneas leidas.
+El proceso cambia dependiendo del tamaño del buffer que se asigne en la ejecución del programa, pero el resultado tiene que ser el mismo, en este caso utilizamos un buffer de 42 bytes.
